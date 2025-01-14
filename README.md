@@ -18,8 +18,8 @@ pip install tensorflow opencv-python numpy
 
 ## Project Structure
 - train.py: Script for training the emotion recognition model.
-- emotion_recognition.py: Script for real-time emotion recognition using the webcam.
-- model: Folder where the trained model is saved (e.g., emotion_recognition_model.h5).
+- main.py: Script for real-time emotion recognition using the webcam.
+- model: Folder where the trained model is saved (e.g., emotion_detection_model.h5).
 
 ## How to Train the Model
 1. Prepare the data: The FER-2013 dataset is automatically loaded via the datasets library. This dataset contains images and their associated emotion labels.
@@ -30,13 +30,13 @@ Example:
 python train.py
 ```
 
-After training, the model is saved as an .h5 file, e.g., emotion_recognition_model.h5.
+After training, the model is saved as an .h5 file, e.g., emotion_detection_model.h5.
 
 ## How to Test the Model with the Webcam
-1. Start the webcam script: Open the emotion_recognition.py script to test the model in real-time. The script uses OpenCV to access the webcam and predict emotions from detected faces in real-time.
+1. Start the webcam script: Open the main.py script to test the model in real-time. The script uses OpenCV to access the webcam and predict emotions from detected faces in real-time.
 2. Run the test:
 ```bash
-python emotion_recognition.py
+python main.py
 ```
 This opens a window where the camera is streamed, and each detected face has its predicted emotion displayed above it. You can exit the application by pressing q.
 
@@ -47,7 +47,7 @@ train.py
 - Model Architecture: A simple Convolutional Neural Network (CNN) is created with Keras, specifically designed for emotion image classification.
 - Training the model: The model is trained with the training data and validated on the test data.
 
-emotion_recognition.py
+main.py
 - Webcam streaming: OpenCV is used to start the webcam and read frames continuously.
 - Face detection: OpenCV’s pre-trained Haar cascades are used to detect faces in the image.
 - Emotion recognition: Each detected face is preprocessed and passed to the trained model for emotion prediction.
